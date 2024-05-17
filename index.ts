@@ -5,6 +5,11 @@ import articleController from "./controllers/articleController";
 import commentController from "./controllers/commentController";
 import comment from "./models/comment";
 import authorController from "./controllers/authorController";
+import userController from "./controllers/userController";
+import categoryController from "./controllers/categoryController";
+import productController from "./controllers/productController";
+import cartProductController from "./controllers/cartProduct";
+import orderController from "./controllers/orderController";
 
 // Connect to MongoDB Atlas
 mongoose.connect("mongodb+srv://kermoohno:qwertyqwerty@cluster0.hz9iewh.mongodb.net/");
@@ -34,6 +39,13 @@ app.use('/', stringsController);
 app.use('/', articleController);
 app.use('/', commentController);
 app.use('/', authorController);
+
+// Veebipood
+app.use('/', userController);
+app.use('/', categoryController);
+app.use('/', productController);
+app.use('/', cartProductController);
+app.use('/', orderController);
 
 // Start the server
 const PORT = process.env.PORT || 3000; // Use environment variable PORT if available
